@@ -1,7 +1,8 @@
 from flask import Flask,request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 # @app.route('/s8_flask_app/hello',methods=['GET'])
 # def hello():
 #     return jsonify({'message':'Yolo'})
@@ -33,6 +34,17 @@ from router import query7_api7
 from router import query8_api8
 from router import query9_api9
 from router import query10_api10
+from router import Analysis1_api1_1
+from router import Analysis1_api1_2
+from router import Analysis2_api1_1
+from router import Analysis2_api1_2
+from router import Analysis3_api1_1
+from router import Analysis3_api1_2
+from router import Analysis4_api1_1
+from router import Analysis4_api1_2
+from router import Analysis5_api1_1
+from router import Analysis5_api1_2
+
 
 app.register_blueprint(query1_api1_div,url_prefix='/api/')
 app.register_blueprint(query1_api1_dis,url_prefix='/api/')
@@ -46,6 +58,17 @@ app.register_blueprint(query7_api7,url_prefix='/api/')
 app.register_blueprint(query8_api8,url_prefix='/api/')
 app.register_blueprint(query9_api9,url_prefix='/api/')
 app.register_blueprint(query10_api10,url_prefix='/api/')
+app.register_blueprint(Analysis1_api1_1,url_prefix='/api/')
+app.register_blueprint(Analysis1_api1_2,url_prefix='/api/')
+app.register_blueprint(Analysis2_api1_1,url_prefix='/api/')
+app.register_blueprint(Analysis2_api1_2,url_prefix='/api/')
+app.register_blueprint(Analysis3_api1_1,url_prefix='/api/')
+app.register_blueprint(Analysis3_api1_2,url_prefix='/api/')
+app.register_blueprint(Analysis4_api1_1,url_prefix='/api/')
+app.register_blueprint(Analysis4_api1_2,url_prefix='/api/')
+app.register_blueprint(Analysis5_api1_1,url_prefix='/api/')
+app.register_blueprint(Analysis5_api1_2,url_prefix='/api/')
+
 
 if __name__ == '__main__':
     app.run(host='localhost',port=5000,debug=True)

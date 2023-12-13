@@ -10,6 +10,17 @@ from QueryServices.query7service import Query7API
 from QueryServices.query8service import Query8API
 from QueryServices.query9service import Query9API
 from QueryServices.query10service import Query10API
+from QueryServices.Analysis1service import Analysis1API_1
+from QueryServices.Analysis1service import Analysis1API_2
+from QueryServices.Analysis2service import Analysis2API_1
+from QueryServices.Analysis2service import Analysis2API_2
+from QueryServices.Analysis3service import Analysis3API_1
+from QueryServices.Analysis3service import Analysis3API_2
+from QueryServices.Analysis4service import Analysis4API_1
+from QueryServices.Analysis4service import Analysis4API_2
+from QueryServices.Analysis5service import Analysis5API_1
+from QueryServices.Analysis5service import Analysis5API_2
+
 from flask import Blueprint
 
 query1_api1_div=Blueprint('query1_api1_div',__name__)
@@ -25,6 +36,20 @@ query8_api8=Blueprint('query8_api8',__name__)
 query9_api9=Blueprint('query9_api9',__name__)
 query10_api10=Blueprint('query10_api10',__name__)
 
+Analysis1_api1_1=Blueprint('Analysis1_api1_1',__name__)
+Analysis1_api1_2=Blueprint('Analysis1_api1_2',__name__)
+
+Analysis2_api1_1=Blueprint('Analysis2_api1_1',__name__)
+Analysis2_api1_2=Blueprint('Analysis2_api1_2',__name__)
+
+Analysis3_api1_1=Blueprint('Analysis3_api1_1',__name__)
+Analysis3_api1_2=Blueprint('Analysis3_api1_2',__name__)
+
+Analysis4_api1_1=Blueprint('Analysis4_api1_1',__name__)
+Analysis4_api1_2=Blueprint('Analysis4_api1_2',__name__)
+
+Analysis5_api1_1=Blueprint('Analysis5_api1_1',__name__)
+Analysis5_api1_2=Blueprint('Analysis5_api1_2',__name__)
 
 
 query1_api1_div.add_url_rule('/query1/division',view_func=Query1API_div.as_view("Get Division-wise Total Sales"))
@@ -39,3 +64,19 @@ query7_api7.add_url_rule('/query7',view_func=Query7API.as_view("Get the products
 query8_api8.add_url_rule('/query8',view_func=Query8API.as_view("Get the season(quarter)that is the worst for each product item"))
 query9_api9.add_url_rule('/query9',view_func=Query9API.as_view("Get the total sales of items geographically (division-wise)"))
 query10_api10.add_url_rule('/query10',view_func=Query10API.as_view("Get the average sales of products sales per store monthly"))
+
+
+Analysis1_api1_1.add_url_rule('/Analysis1/DivisionWiseYearly',view_func=Analysis1API_1.as_view("Total Sales Division wise yearly"))
+Analysis1_api1_2.add_url_rule('/Analysis1/WeekOfEachMonthDhaka2022',view_func=Analysis1API_2.as_view("Week of each month that has the highest sales for the year 2022 in Dhaka"))
+
+Analysis2_api1_1.add_url_rule('/Analysis2/Top10Customer20212020',view_func=Analysis2API_1.as_view("Top 10 customers who bought the highest number of products for the year 2021 & 2020"))
+Analysis2_api1_2.add_url_rule('/Analysis2/UpazilaSalesCovid',view_func=Analysis2API_2.as_view("Upazila's and their corresponding sales in the year 2022 and 2020 (Pre and post covid)"))
+
+Analysis3_api1_1.add_url_rule('/Analysis3/YearlyTotalSalesUnit',view_func=Analysis3API_1.as_view("Yearly lowest total sales on the basis of unit (Unit that did the least sales yearly)"))
+Analysis3_api1_2.add_url_rule('/Analysis3/SalesCT20222020',view_func=Analysis3API_2.as_view("Sales of unit named 'CT' of each month for the year 2020 and 2022"))
+
+Analysis4_api1_1.add_url_rule('/Analysis4/QuantityStoreSizeDecember',view_func=Analysis4API_1.as_view("Total quantity sold based on store size (yearly) for the month of december"))
+Analysis4_api1_2.add_url_rule('/Analysis4/AverageQuantitySoldQ4Dhaka',view_func=Analysis4API_2.as_view("Average quantity sold for the 4th quarter(Q4) in Dhaka"))
+
+Analysis5_api1_1.add_url_rule('/Analysis5/MonthStockHighestYears',view_func=Analysis5API_1.as_view("Month of each year when stock quantity remains the highest"))
+Analysis5_api1_2.add_url_rule('/Analysis5/UnitLowestStock2022020',view_func=Analysis5API_2.as_view("Unit that had the lowest stock quantity in the year 2020 and 2022"))

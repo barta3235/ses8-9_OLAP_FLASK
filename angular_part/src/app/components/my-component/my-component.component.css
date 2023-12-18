@@ -1,0 +1,43 @@
+/* Add some spacing and styling for better appearance */
+.container-fluid {
+  padding: 20px;
+  height: 500px;
+  max-width: 100%;
+  position: fixed;
+}
+
+.chart-wrapper {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #36454f;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.xcx{
+  background-color:#36454f ;
+  margin-bottom: 5px;
+  color: white;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.wow {
+  margin-top: 15px;
+  padding: 15px 20px; /* Adjust the padding for more space */
+  border: 1px solid #fff; /* Add a border to the items */
+  border-radius: 15px;
+  margin-bottom: 15px; /* Add space between items */
+  background-color: #36454f; /* Dark background color */
+  color: white; /* White text color */
+  transition: background-color 0.3s; /* Add a smooth transition for color change */
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.wow:hover {
+  background-color: black; /* Change the background color on hover */
+  color: white; /* Change text color on hover for better visibility */
+  border-color: #555; /* Change border color on hover */
+}
+

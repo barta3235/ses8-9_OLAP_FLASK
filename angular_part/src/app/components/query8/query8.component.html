@@ -1,0 +1,19 @@
+<h3 style="text-align:center;">Season(quarter)that is the worst for each product item</h3>
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Quarter</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Total Sales</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of data_all">
+            <td>{{ item.Quarter }}</td>
+            <td>{{ item.Item_Name }}</td>
+            <td>{{ item.Total_Sales }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

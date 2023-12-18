@@ -1,0 +1,62 @@
+
+
+
+<!-- Table with Pagination -->
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+  <h3 style="text-align:center;" class="wow">Tabular representation of Total quantity sold based on store size (yearly) for the month of december</h3><!-- Search Box -->
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Store Size</th>
+      <th scope="col">Year</th>
+      <th scope="col">Quantity Sold</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of pagedData">
+      <td>{{ item.Store_Size }}</td>
+      <td>{{ item.Year }}</td>
+      <td>{{ item.Quantity_Sold }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="xxg">
+    <ul class="pagination">
+      <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+        <a class="page-link" (click)="setPage(page)">{{ page }}</a>
+      </li>
+    </ul>
+  </div>
+
+
+
+  <br>
+  <br>
+  <h3 style="text-align:center;" class="wow">Visual representation of total quantity sold based on store size (yearly) for the month of december</h3>
+  <canvas id="barChartCanvas" width="1200" height="700"></canvas>
+
+
+  <br>
+  <br>
+  <h3 class="wow">Description:</h3>
+  <p class="xgg">The query focuses on analyzing the total quantity sold based on store size on a yearly basis for the month of December. The dataset provided includes information about three store sizes: high, medium, and small, spanning from 2014 to 2021. The quantity sold is
+    measured in units, and the analysis aims to understand the sales trends across different store sizes during the specified time frame.
+    <br><br>The data trend reveals distinct patterns in the quantity sold based on store size over the years. Notably, the large store consistently shows substantial sales figures, with a peak in 2020. In contrast, the medium-sized store experiences fluctuations, including a significant drop in 2020. The small-sized store, while displaying moderate sales in the earlier years, sees a notable increase in 2020. Analyzing the year-over-year
+    changes for each store size allows for a more granular understanding of sales performance, identifying potential
+    growth or decline trends.<br><br>The detailed analysis of total quantity sold based on store size provides valuable insights for
+    strategic decision-making in inventory management. Identifying trends and patterns enables businesses to optimize stocking strategies
+    and allocate resources effectively with respect to consumer demand. The data can inform future planning, helping small businesses
+    anticipate peak sales periods and optimize their supply chain. Additionally, understanding the interplay between store size,
+    yearly variations, and quantity sold aids in having an alarm for small and medium store sizes to look for strategies to maximize sales.</p>
+  <br>
+  <br>
+
+
+</div>
+
+

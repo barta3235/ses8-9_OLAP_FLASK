@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Image Section -->
+    <div class="col-md-8">
+      <img src="../assets/images/3515462.jpg" alt="Image" class="img-fluid" style="width: 100%; max-height: 600px;">
+    </div>
+
+    <!-- Chart Section -->
+    <div class="col-md-4">
+      <h2 class="xcx">Division-wise Total Sales</h2>
+      <div class="chart-wrapper" *ngIf="chartData && chartData.length > 0">
+        <canvas baseChart
+                [type]="'line'"
+                [datasets]="chartData"
+                [labels]="chartLabels"
+                [options]="chartOptions">
+        </canvas>
+      </div>
+      <div class="wow">
+        <p>Intern: Ahnaf Daiyan <br><br>Virtual Training on Industrial Practice and Learning
+          on Data Analytics<br><br>Intern ID: i23b0034s18<br><br>Github: https://github.com/barta3235<br><br>
+          Email: ahnafdaiyan3235@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</div>

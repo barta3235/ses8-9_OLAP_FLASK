@@ -1,0 +1,30 @@
+<!-- app.component.html -->
+<div class="container mt-5">
+    <h3 style="text-align:center;">Provide an input of the number of days to list down the products that have been sold since then</h3>
+    <form [formGroup]="query7form" (ngSubmit)="search()">
+        <div class="mb-3">
+            <label for="days" class="form-label">Number of Days:</label>
+            <input type="text" class="form-control" id="days" formControlName="days" placeholder="Enter days">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <div class="mt-4 output-container" *ngIf="data_all.length > 0">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Transaction Type</th>
+                <th scope="col">Item Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of data_all">
+                <td>{{ item.Trans_Type }}</td>
+                <td>{{ item.Item_Name }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

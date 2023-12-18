@@ -1,0 +1,75 @@
+
+
+<!-- Table with Pagination -->
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+  <h3 style="text-align:center;" class="wow">Tabular representation of Average quantity sold for the 4th quarter(Q4) in Dhaka</h3><!-- Search Box -->
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Year</th>
+      <th scope="col">Average Quantity Sold</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of pagedData">
+      <td>{{ item.Year }}</td>
+      <td>{{ item.Average_Quantity_Sold }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="xxg">
+    <ul class="pagination">
+      <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+        <a class="page-link" (click)="setPage(page)">{{ page }}</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <br>
+  <br>
+  <h3 style="text-align:center;" class="wow">Visual representation of average quantity sold for the 4th quarter(Q4) in Dhaka</h3>
+  <div class="col-8 mx-auto">
+    <div class="chart-wrapper" *ngIf="chartData && chartData.length > 0" >
+      <canvas baseChart
+              [type]="'line'"
+              [datasets]="chartData"
+              [labels]="chartLabels"
+              [options]="chartOptions"
+              [style.width.px]="chartWidth"
+              [style.height.px]="chartHeight">
+      </canvas>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <h3 class="wow">Description:</h3>
+  <p class="xgg">The query investigates the average quantity sold for the 4th quarter (Q4) in Dhaka over the years.
+    The data provided includes the years from 2014 to 2022 and the corresponding average quantity sold for each year.
+    The output is focused on understanding the trends and variations in the average quantity
+    sold during the 4th quarter, providing valuable insights into the performance of sales in Dhaka during quarter 4 over the years.
+    <br><br>The tabular and graphical representation presents a clear picture of the average quantity sold during the 4th
+    quarter in Dhaka for each year. Analyzing the data, we observe fluctuations in the average quantity sold across the years.
+    The years 2015, 2018, 2021, and 2022 stand out with notably high average quantities sold, indicating potential periods of
+    increased demand or successful sales strategies. Conversely, the years 2017 and 2019 show lower average quantities sold,
+    suggesting potential challenges or factors impacting sales during those specific quarters.
+    This analysis lays the groundwork for identifying patterns and making informed decisions to optimize sales strategies in Dhaka.
+    <br><br>Understanding the average quantity sold during the 4th quarter in Dhaka provides several benefits for inventory analytics.
+    It enables businesses to anticipate and plan for peak sales periods, allocate resources efficiently, and optimize inventory levels
+    to meet demand. Additionally, this analysis can contribute to identifying factors that influence variations in sales, such as economic
+    conditions or seasonal patterns, leading to more informed decision-making. The pattern in sales can also help identify or look for
+    factors that affected average quantity sold
+    in the respective year, giving answers as to why in 2021 and 2022 average quantity sold was higher in contrast to the later years.</p>
+  <br>
+  <br>
+
+
+</div>
+
+

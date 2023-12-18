@@ -1,0 +1,58 @@
+
+
+<!-- Table with Pagination -->
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+  <h3 style="text-align:center;" class="wow">Tabular representation of Week of each month that has the highest sales for the year 2022 in Dhaka</h3><!-- Search Box -->
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Month</th>
+      <th scope="col">Week</th>
+      <th scope="col">Total Sales</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of pagedData">
+      <td>{{ item.Month }}</td>
+      <td>{{ item.Week }}</td>
+      <td>{{ item.Total_Sales }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="xxg">
+    <ul class="pagination">
+      <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+        <a class="page-link" (click)="setPage(page)">{{ page }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <br>
+  <br>
+  <h3 style="text-align:center;" class="wow">Visual representation of Week of each month that has the highest sales for the year 2022 in Dhaka</h3>
+  <canvas id="stemChartCanvas" width="1200" height="700"></canvas>
+
+  <br>
+  <br>
+  <h3 class="wow">Description:</h3>
+  <p class="xgg">The data trend appears to represent the week of each month that has the highest sales for the year 2022 in Dhaka.
+    Each entry includes a week identifier (1st, 2nd, 3rd, or 4th week), a corresponding week number,
+    and the total sales amount for that week. It is basically a summary of sales data, categorized by week.<br><br>The data showcases
+    the highest sales figures for different weeks of the year 2022 in Dhaka. The graph further illustrates the month-wise
+    distribution of total sales, with each bar representing a specific week. The legend, in this case, would specify the
+    week number. This analysis could provide insights into sales patterns throughout the month,
+    highlighting any particular weeks that stand out in terms of high or low sales.<br><br>Analysts can monitor or
+    identify trends or anomalies in sales by weeks for certain years, like in this case, 2022. This visualization could be
+    beneficial for business decision-making, allowing stakeholders to quickly grasp the patterns in sales data. Understanding
+    the sales performance for different weeks within a
+    month can inform marketing strategies and resource allocation. Further aiding in strategic business decisions.</p>
+  <br>
+  <br>
+
+
+</div>

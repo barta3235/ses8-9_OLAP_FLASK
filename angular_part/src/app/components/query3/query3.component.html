@@ -1,0 +1,17 @@
+<h3 style="text-align:center;"> Total sales in Barisal</h3>
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Transaction Type</th>
+            <th scope="col">Total Sales</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of data_all">
+            <td>{{ item.Division }}</td>
+            <td>{{ item.Total_Sales }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

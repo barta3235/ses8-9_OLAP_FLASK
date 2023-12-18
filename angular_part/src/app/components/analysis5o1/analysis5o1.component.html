@@ -1,0 +1,69 @@
+
+
+<!-- Table with Pagination -->
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+  <h3 style="text-align:center;" class="wow">Tabular representation of Month of each year when stock quantity remains the highest</h3><!-- Search Box -->
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Year</th>
+      <th scope="col">Month</th>
+      <th scope="col">Stock Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of pagedData">
+      <td>{{ item.Year }}</td>
+      <td>{{ item.Month }}</td>
+      <td>{{ item.Stock_Quantity }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="xxg">
+    <ul class="pagination">
+      <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+        <a class="page-link" (click)="setPage(page)">{{ page }}</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <br>
+  <br>
+  <h3 style="text-align:center;" class="wow">Visual representation of month of each year when stock quantity remains the highest</h3>
+  <canvas id="barChartCanvas" width="1200" height="700"></canvas>
+
+
+  <br>
+  <br>
+  <h3 class="wow">Description:</h3>
+  <p class="xgg">The query titled "Month of each year when stock quantity remains the highest" aims to identify, for each year,
+    which month has the highest stock quantity. The data trends include information on the year, month, and stock quantity.
+    The analysis involves examining the stock quantities for each year and determining the month with the highest value.
+    This type of analysis is
+    crucial for inventory management, allowing businesses to optimize their stock levels and respond effectively to demand fluctuations.
+    <br><br>The data trends comprise several years (2014–2022), and for each year, there is information on the month and
+    the corresponding stock quantity. Analyzing the data reveals specific trends and patterns. For example, in the year 2020,
+    February (Month 2) has the highest stock quantity of 27,622 units. Similarly, in 2016, August (Month 8) recorded the highest
+    stock quantity at 23,227 units. The analysis of each year's data allows for a comprehensive understanding of the seasonal
+    variations in stock quantities.
+    This information is invaluable for inventory planning, as businesses can allocate resources more effectively based on previous trends.
+    <br><br>The analysis of the data provides actionable insights for inventory management. Knowing the month of the year when stock
+    quantities peak allows businesses to plan for increased demand, allocate resources efficiently, and avoid stockouts or overstock
+    situations. This optimization can lead to cost savings and improved customer satisfaction. Additionally, the identified patterns can
+    help identify months where stock quantity is lower and, in turn, enable more stock flow to
+    allow smooth operation. Overall, the further benefit is enhanced strategic planning and operational efficiency in inventory management.</p>
+  <br>
+  <br>
+
+
+
+</div>
+
+
+

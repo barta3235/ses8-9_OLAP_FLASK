@@ -1,0 +1,65 @@
+
+
+<!-- Table with Pagination -->
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+  <h3 style="text-align:center;" class="wow">Tabular representation of Top 10 customers who bought the highest number of products for the year 2021 & 2020</h3><!-- Search Box -->
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Customer</th>
+      <th scope="col">Year</th>
+      <th scope="col">Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of pagedData">
+      <td>{{ item.Customer }}</td>
+      <td>{{ item.Year }}</td>
+      <td>{{ item.Quantity }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="xxg">
+    <ul class="pagination">
+      <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+        <a class="page-link" (click)="setPage(page)">{{ page }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <br>
+  <br>
+  <h3 style="text-align:center;" class="wow">Visual representation top 10 customers who bought the highest number of products for the year 2021 & 2020</h3>
+  <canvas id="horizontalBarChartCanvas" width="1200" height="700"></canvas>
+
+  <br>
+  <br>
+  <h3 class="wow">Description:</h3>
+  <p class="xgg">The motivation behind the query is to represent the top 10 customers who bought the most products in 2021 and 2020. It
+    comprises entries for customers across two years, 2020 and 2021, documenting their individual purchase quantities. This very
+    structure allows for a comparative analysis of
+    customer purchasing trends across these specific years (2020 and 2021), highlighting inconsistencies in customer behavior.<br><br>Upon
+    further examination the available datas, a few key insights surfaces. In the year 2020, notable customers like C000355, C000836, and
+    C001181 made substantial purchases, each surpassing the 4000 quantity mark, indicating significant buying activities. On the other hand,
+    in 2021, the purchasing pattern seems to have shifted, with customers like C001895, C001236, and C000667 having lower quantities,
+    suggesting a potential decline in their purchasing behavior compared to the prior year. Moreover, while some customers maintained
+    consistent purchasing levels across both
+    years, others showcased variations in their buying patterns, indicating a potential change in preferences or circumstances.<br><br>
+    Analyzing the customer versus quantity data provides critical insights for decision-making and strategizing. Understanding customer
+    behavior across different years can aid in making efficient marketing strategies. Identifying customers who significantly reduced their
+    purchases in 2021 compared to 2020 may prompt targeted engagement efforts to regain their interest. Similarly, recognizing customers
+    displaying consistent high-volume purchases offers an opportunity for loyalty programs or personalized incentives to maintain their
+    patronage. Ultimately, leveraging this data for strategic planning could enhance customer satisfaction, and overall business growth by
+    aligning strategies with customer preferences and behaviors.</p>
+  <br>
+  <br>
+
+
+
+</div>
+

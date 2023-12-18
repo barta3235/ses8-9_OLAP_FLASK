@@ -1,0 +1,28 @@
+<h3 style="text-align:center;"> Transaction-wise total sales</h3>
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Transaction Type</th>
+            <th scope="col">Total Sales</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of data_all">
+            <td>{{ item.Transaction_Type }}</td>
+            <td>{{ item.Total_Sales }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="col-8 mx-auto">
+    <div class="chart-wrapper" *ngIf="chartData && chartData.length > 0" >
+        <canvas baseChart
+                [type]="'line'"
+                [datasets]="chartData"
+                [labels]="chartLabels"
+                [options]="chartOptions">
+        </canvas>
+    </div>
+</div>
+

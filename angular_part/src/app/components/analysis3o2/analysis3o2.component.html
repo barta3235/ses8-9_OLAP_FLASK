@@ -1,0 +1,68 @@
+
+
+<!-- Table with Pagination -->
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+  <h3 style="text-align:center;" class="wow">Tabular represention of Sales of unit named 'CT' of each month for the year 2020 and 2022</h3><!-- Search Box -->
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Unit Name</th>
+      <th scope="col">Year</th>
+      <th scope="col">Month</th>
+      <th scope="col">Total_Sales</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of pagedData">
+      <td>{{ item.Unit_Name }}</td>
+      <td>{{ item.Year }}</td>
+      <td>{{ item.Month }}</td>
+      <td>{{ item.Total_Sales }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="xxg">
+    <ul class="pagination">
+      <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+        <a class="page-link" (click)="setPage(page)">{{ page }}</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <br>
+  <br>
+  <h3 style="text-align:center;" class="wow">Visual representation of sales of unit named 'CT' of each month for the year 2020 and 2022</h3>
+  <canvas id="lineChartCanvas" width="1200" height="700"></canvas>
+
+
+  <br>
+  <br>
+  <h3 class="wow">Description:</h3>
+  <p class="xgg">The query and the following data represent the sales data for a unit named 'CT' across the months of the years
+    2020 and 2022. The analysis includes information about the total sales figures for each month within these years. It offers a detailed
+    breakdown of sales performance concerning this specific unit over the mentioned
+    period. The data further highlights fluctuations and variations in sales figures on a month-to-month basis between the two years.
+    <br><br>From the data itself, it's evident that there are noticeable differences in sales figures between the years 2020 and 2022 for the 'CT' unit. In 2020, the sales started notably high in January, gradually decreased till August, with a slight fluctuation in September, and then increased towards the end of the year, peaking in December. On the contrary, the sales pattern in 2022 was relatively lower, with sporadic spikes in January, March, and May. The sales remained relatively lower for the rest of the months in
+    comparison to 2020. This analysis showcases varying sales trends between the two years, indicating how sales performance was
+    affected.<br><br>Understanding the sales trends for the 'CT' unit in 2020 and 2022 can yield valuable insights for strategic
+    decision-making. By comparing the total sales figures from 2020 and 2022 and analyzing the trend, whether declining or rising,
+    we can vary the production of the unit 'CT'. Analyzing these patterns might help in identifying the factors influencing sales
+    fluctuations. Further exploration could involve investigating external factors like market changes, economic conditions, and the
+    obvious factor, which was the pandemic. This analysis can be instrumental in devising strategies to optimize sales after the pandemic,
+    whether by capitalizing on successful periods, adjusting marketing approaches, or improving operations during dull periods or months.
+    Additionally, it can guide in forecasting future sales trends,
+    enabling proactive measures to enhance overall sales performance for similar units or products.</p>
+  <br>
+  <br>
+
+
+
+</div>
+
+

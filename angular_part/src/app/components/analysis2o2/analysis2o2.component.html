@@ -1,0 +1,67 @@
+
+
+<!-- Table with Pagination -->
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+  <h3 style="text-align:center;" class="wow">Tabular representation of Upazila's and their corresponding sales in the year 2022 and 2020 (Pre and post covid)</h3><!-- Search Box -->
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Upazila</th>
+      <th scope="col">Year</th>
+      <th scope="col">Total_Sales</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of pagedData">
+      <td>{{ item.Upazila }}</td>
+      <td>{{ item.Year }}</td>
+      <td>{{ item.Total_Sales }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="xxg">
+    <ul class="pagination">
+      <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+        <a class="page-link" (click)="setPage(page)">{{ page }}</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <br>
+  <br>
+  <h3 style="text-align:center;" class="wow">Visual representation Upazila's and their corresponding sales in the year 2022 and 2020<br>Pre and post covid analysis</h3>
+  <canvas id="barChartCanvas" width="1200" height="700"></canvas>
+
+
+  <br>
+  <br>
+  <h3 class="wow">Description:</h3>
+  <p class="xgg">The representation illlustrates the total sales in different upazilas for the years 2020 and 2022. Basically, Upazila's
+    and their corresponding sales in the year 2022 and 2020. This is a pre and post covid analysis. Each row corresponds to a specific
+    upazila, the respective year, and the total sales in that combination. The upazilas include places like Uttara, Gournadi, Mirpur-1,
+    Mohammadpur, Megna, Agargaon, Mogbazar, Bashundhara R/A, Shyamoli, Farmgate, Keranigong, Kharpara, Savar, Dhanmondi, and Bishwanath.
+    The sales data varies significantly across different upazilas and years, providing a comprehensive overview of the distribution.<br><br>
+    A detailed analysis reveals interesting patterns in total sales across upazilas and years. For instance, Mirpur-1 experienced a substantial
+    increase in sales from 2020 to 2022, reaching 200,939.00. Similarly, Savar saw a notable surge in sales, reaching 224,260.00 in 2022. On the other
+    hand, some upazilas, like Shyamoli and Farmgate, experienced a decrease in sales between the two years. This allows for a
+    comprehensive examination of sales trends in specific regions, aiding in identifying growth areas and potential areas for
+    improvement.<br><br>The visualization such as graphs depicting upazila vs. total sales with legends for the years 2020 and 2022 provides
+    a visual representation of the sales distribution. This visualization can offer valuable insights into regional sales performance over time,
+    facilitating strategic decision-making for businesses. Identifying upazilas with significant growth or decline in sales allows businesses to
+    tailor marketing strategies or focus more on those zones and target specific areas for expansion or improvement. The graphical representation
+    enhances the interpretability of the data, enabling stakeholders to make informed decisions that align with business with market trends.</p>
+  <br>
+  <br>
+
+
+
+
+
+</div>
+

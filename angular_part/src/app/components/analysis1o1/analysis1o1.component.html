@@ -1,0 +1,60 @@
+
+
+<!-- Table with Pagination -->
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+  <h3 style="text-align:center;" class="wow">Tabular representation of Total Sales Division Wise Yearly</h3><!-- Search Box -->
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Division</th>
+      <th scope="col">Year</th>
+      <th scope="col">Total Sales</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of pagedData">
+      <td>{{ item.Division }}</td>
+      <td>{{ item.Year }}</td>
+      <td>{{ item.Total_Sales }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="xxg">
+    <ul class="pagination">
+      <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+        <a class="page-link" (click)="setPage(page)">{{ page }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <br>
+  <br>
+  <h3 style="text-align:center;" class="wow">Visual representation of Total Sales Division Wise Yearly</h3>
+  <canvas id="barChartCanvas" width="1200" height="700"></canvas>
+
+  <br>
+  <br>
+  <h3 class="wow">Description:</h3>
+  <p class="xgg">The query provides a detailed illustration showcasing the total sales for different divisions across multiple years.
+    The data is structured with columns for division, year, and total sales. The objective here is to analyze and visualize the data and
+    likely gain insights into sales trends and patterns for each division over the specified time period of 2014 to 2022.<br><br>The data
+    represents total sales for various divisions spanning from 2014 to 2022. As part of the analysis,there are observable trends within
+    each division over the years. For instance, Dhaka consistently has the highest total sales, followed by Chittagong and Rajshahi.
+    Some divisions, like Barishal and Khulna, show fluctuations, while others, such as Sylhet, demonstrate a relatively stable pattern.
+    Analyzing the annual sales growth or decline for each
+    division would provide valuable insights into regional market dynamics.<br><br>The analysis of this data can offer strategic
+    insights for decision-making. Identifying the highest and lowest performing divisions, understanding the factors influencing
+    sales fluctuations, and recognizing patterns can inform targeted interventions or improvements. Additionally,
+    comparing sales performance across divisions may guide resource allocation, marketing strategies,
+    and operational adjustments for better overall business outcomes.</p>
+  <br>
+  <br>
+
+
+
+</div>

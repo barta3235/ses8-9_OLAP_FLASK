@@ -1,0 +1,68 @@
+
+
+<!-- Table with Pagination -->
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+  <h3 style="text-align:center;" class="wow">Tabular representation of Yearly lowest total sales on the basis of unit (Unit that did the least sales yearly)</h3><!-- Search Box -->
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Unit Name</th>
+      <th scope="col">Year</th>
+      <th scope="col">Total_Sales</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of pagedData">
+      <td>{{ item.Unit_Name }}</td>
+      <td>{{ item.Year }}</td>
+      <td>{{ item.Total_Sales }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="xxg">
+    <ul class="pagination">
+      <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+        <a class="page-link" (click)="setPage(page)">{{ page }}</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <br>
+  <br>
+  <h3 style="text-align:center;" class="wow">Visual representation of Yearly lowest total sales on the basis of unit (Unit that did the least sales yearly)<br>Pre and post covid analysis</h3>
+  <canvas id="barChartCanvas" width="1200" height="700"></canvas>
+
+
+  <br>
+  <br>
+  <h3 class="wow">Description:</h3>
+  <p class="xgg">From the data, the representation we can arrive at is the yearly lowest total sales on the basis of unit (the unit that
+    did the least sales yearly). the total sales for different units (lb. and cartons) across various years. The sales data is organized
+    into three columns: "Unit Name," "Year," and "Total Sales." The units include "lb" (pounds) and "cartons." The years range from 2014
+    to 2022. The sales figures indicate the total quantity sold
+    for each unit in a given year. The query focuses on understanding the sales trends over time and the performance of different units.
+    <br><br>The table presents a clear picture of the sales performance over the years. Notable observations include a substantial increase
+    in LB sales from 2014 to 2015, reaching 255.0,
+    followed by a significant drop in 2016 to 15.0. The LB sales show a recovery in the subsequent years, particularly in 2018, with a total
+    of 150.0. Cartons, on the other hand, made a notable entry in 2019 with sales of 114.0. The lb unit continued to dominate in 2020
+    with 150.0 in sales, and cartons maintained a consistent performance in 2021 and 2022 with 133.0 and 240.0 in sales, respectively.
+    <br><br>This detailed analysis of the sales data provides valuable insights into the performance of different units over the years. It allows
+    businesses to identify trends and make informed decisions. Understanding the fluctuations in sales for each unit helps in production planning
+    and marketing efforts. The graphical representation of year vs. total sales, with legends for lb and cartons, will visually highlight the trends
+    and patterns, making it easier for stakeholders to grasp the information. This allows you to lower or omit units that have the lowest sales, saving
+    product costs
+    and resources. This can also allow some units to continue to be produced if their sales tend to have a rising pattern over the years.
+  </p>
+  <br>
+  <br>
+
+
+
+</div>
+

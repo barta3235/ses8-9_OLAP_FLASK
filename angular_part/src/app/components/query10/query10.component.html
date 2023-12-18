@@ -1,0 +1,19 @@
+<h3 style="text-align:center;">Average sales of products sales per store monthly</h3>
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Store</th>
+            <th scope="col">Month</th>
+            <th scope="col">Average Sales</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of data_all">
+            <td>{{ item.Store}}</td>
+            <td>{{ item.Month }}</td>
+            <td>{{ item.Average_Sales }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

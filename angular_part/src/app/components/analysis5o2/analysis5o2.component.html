@@ -1,0 +1,70 @@
+
+
+<!-- Table with Pagination -->
+<div class="mt-4 output-container" *ngIf="data_all.length >= 0">
+  <h3 style="text-align:center;" class="wow">Tabular representation of Unit that had the lowest stock quantity in the year 2020 and 2022</h3><!-- Search Box -->
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Unit</th>
+      <th scope="col">Year</th>
+      <th scope="col">Stock Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of pagedData">
+      <td>{{ item.Unit }}</td>
+      <td>{{ item.Year }}</td>
+      <td>{{ item.Stock_Quantity }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="xxg">
+    <ul class="pagination">
+      <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+        <a class="page-link" (click)="setPage(page)">{{ page }}</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <br>
+  <br>
+  <h3 style="text-align:center;" class="wow">Visual representation of units that had the lowest stock quantity in the year 2020 and 2022 </h3>
+  <canvas id="lineChartCanvas" width="800" height="400"></canvas>
+
+
+  <br>
+  <br>
+  <h3 class="wow">Description:</h3>
+  <p class="xgg">Upon analyzing the data pertaining to the lowest stock quantity for various units in the years 2020 and 2022,
+    several trends and insights emerge. It's evident that there have been fluctuations in stock quantities across different units
+    over these years. Units like 'ct' and 'pk' experienced significant reductions in stock quantity from 2020 to 2022, indicating a
+    potential impact due to various factors, including possibly post-COVID adjustments or alterations in demand. On the other hand,
+    certain units
+    like 'bars' and 'cartons' witnessed relatively smaller decreases in stock quantities, implying a more stable or consistent demand.
+    <br><br>The table showcases stock quantity variations for different units across the years 2020 and 2022. Units such as 'ct' (pieces)
+    and 'pk' (packs) exhibit substantial declines in stock quantity, signifying potential shifts in consumer behavior, supply chain
+    adjustments, or market dynamics. Conversely, units like 'bars' and 'cartons' display more marginal reductions, possibly indicating
+    steadier market demand or product stability. Notably, 'bags' and 'bottles' depict fluctuations, with 'bags' showing an increase and
+    'bottles' a decrease in stock quantity. Such variations suggest the necessity for deeper analysis to comprehend the underlying causes.
+    <br><br>Understanding the fluctuations in stock quantities among various units aids in strategic decision-making for
+    inventory management. This analysis enables businesses to anticipate demand and allocate resources efficiently. Recognizing
+    units experiencing significant decreases in stock quantity can prompt businesses to investigate factors influencing this decline,
+    whether due to changes in consumer preferences, production issues, or market shifts. Moreover, identifying units with stable or
+    increasing stock quantities allows for
+    better resource allocation to meet demand effectively, ensuring a smoother inventory operation and customer satisfaction.</p>
+  <br>
+  <br>
+
+
+
+</div>
+
+
+

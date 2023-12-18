@@ -1,0 +1,70 @@
+/* Style for the output container */
+.output-container {
+  width: 75%; /* Adjust the desired width */
+  margin: auto;
+}
+
+/* Style for the table container */
+.table-container {
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+/* Style for the table */
+.table {
+  width: 100%;
+}
+
+.table-bordered tbody tr {
+  border-bottom: 1px solid #ddd; /* Add a border between rows */
+}
+
+.table th, .table td {
+  text-align: center; /* Center content horizontally */
+  vertical-align: middle; /* Center content vertically */
+  border: 2px solid #ddd; /* Add borders to cells */
+}
+
+/* Style for the active page link */
+.pagination .page-link.active {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+
+.form-control {
+  border: 1px solid #000; /* Black border for the search box */
+}
+
+
+.wow {
+  padding: 10px 20px; /* Adjust the padding for more space */
+  border: 1px solid #fff; /* Add a border to the items */
+  border-radius: 15px;
+  margin-bottom: 15px; /* Add space between items */
+  background-color: #1b2328; /* Dark background color */
+  color: white; /* White text color */
+  transition: background-color 0.3s; /* Add a smooth transition for color change */
+}
+
+.wow:hover {
+  background-color: black; /* Change the background color on hover */
+  color: white; /* Change text color on hover for better visibility */
+  border-color: #555; /* Change border color on hover */
+}
+
+.xgg {
+  padding: 10px 20px; /* Adjust the padding for more space */
+  background-color: #242F36;
+  color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid white;
+  border-radius: 15px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.xgg:hover{
+  background-color: black;
+}

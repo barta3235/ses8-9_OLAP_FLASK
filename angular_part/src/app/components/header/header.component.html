@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark px-2">
+
+  <div class="side-nav-button p-2 me-3 text-light">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <a class="navbar-brand px-4" href="#">Neue Datenanalyse</a>
+
+  <div class="navbar-collapse">
+
+    <ul class="navbar-nav me-auto">
+
+      <li class="nav-item dropdown">
+        <i class="fa-solid fa-coins"></i>
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+          Financial Analytics
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li class="dropdown-item" [routerLink]="'a101'">1.1| Total Sales Division wise yearly</li>
+          <li class="dropdown-item" [routerLink]="'a102'">1.2| Week of each month that has the highest sales for the year 2022 in Dhaka</li>
+          <li class="dropdown-item" [routerLink]="'a201'">2.1| Top 10 customers who bought the highest number of products for the year 2021 & 2020</li>
+          <li class="dropdown-item" [routerLink]="'a202'">2.2| Upazila's and their corresponding sales in the year 2022 and 2020 (Pre and post covid)</li>
+          <li class="dropdown-item" [routerLink]="'a301'">3.1| Yearly lowest total sales on the basis of unit (Unit that did the least sales yearly)</li>
+          <li class="dropdown-item" [routerLink]="'a302'">3.2| Sales of unit named 'CT' of each month for the year 2020 and 2022</li>
+        </ul>
+      </li>
+
+
+      <li class="nav-item dropdown">
+        <i class="fa-solid fa-cart-flatbed"></i>
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+          Inventory Analytics
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li class="dropdown-item" [routerLink]="'a401'">4.1| Total quantity sold based on store size (yearly) for the month of december</li>
+          <li class="dropdown-item" [routerLink]="'a402'">4.2| Average quantity sold for the 4th quarter(Q4) in Dhaka</li>
+          <li class="dropdown-item" [routerLink]="'a501'">5.1| Month of each year when stock quantity remains the highest</li>
+          <li class="dropdown-item" [routerLink]="'a502'">5.2| Unit that had the lowest stock quantity in the year 2020 and 2022</li>
+        </ul>
+      </li>
+
+
+
+    </ul>
+
+  </div>
+
+</nav>
+<router-outlet></router-outlet>
+
